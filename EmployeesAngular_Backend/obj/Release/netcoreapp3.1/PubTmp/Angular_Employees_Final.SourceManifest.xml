@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="E:\Visual_Studio_Projects\Angular_Employees_Final\obj\Release\netcoreapp3.1\PubTmp\Out\" />
+  <dbfullsql path="E:\Visual_Studio_Projects\Angular_Employees_Final\obj\Release\netcoreapp3.1\PubTmp\EFSQLScripts\Angular_Employees_Final.Models.EmployeeContext.sql" />
+</sitemanifest>

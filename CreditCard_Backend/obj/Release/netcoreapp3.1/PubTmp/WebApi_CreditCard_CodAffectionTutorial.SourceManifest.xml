@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="E:\Visual_Studio_Projects\WebApi_CreditCard_CodAffectionTutorial\obj\Release\netcoreapp3.1\PubTmp\Out\" />
+  <dbfullsql path="E:\Visual_Studio_Projects\WebApi_CreditCard_CodAffectionTutorial\obj\Release\netcoreapp3.1\PubTmp\EFSQLScripts\WebApi_CreditCard_CodAffectionTutorial.Models.PaymentDetailContext.sql" />
+</sitemanifest>

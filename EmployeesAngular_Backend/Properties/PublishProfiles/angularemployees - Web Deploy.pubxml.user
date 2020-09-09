@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAPmmYON+wpk2So0Db4cFouQAAAAACAAAAAAAQZgAAAAEAACAAAAAGmeFanAnSk7WEVdYKyQVOB+VxTZWHBbeQsFdV8wfwyAAAAAAOgAAAAAIAACAAAACwAvyJKh3LuFUFtP+xxmHuE1Mzpcm55KhApXr5RocCK4AAAAB4TT8znNsjM1x+Y8Yxps+6o6LLySqir1489l7uZNFpErfkclUSxgES4IHCRbyu3cPYFw9m2ktxgzeEgMaBXAUoxMexbB7hbWfFIdiyik/yT51s4ikSY7GQf9jAlLlsYvBqrcOQ/pbQTHYnPxWlae/3pNqQW7ooag2hz+j/o1Di20AAAAAC7cqBvUOwuvTyXMFFz6Pp+4u7xygEymjmGUeLFgDSJ2BO4w5Z2ENu6Ia57tUt+xFB5z60/SzraP97BqNd6mnX</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="Angular_Employees_FinalContext">
+      <Value>Data Source=tcp:webapi-creditcard-codaffectiontutorialdbserver.database.windows.net,1433%3bInitial Catalog=Angular_Employees_Final_db%3bUser Id=of3lia%40webapi-creditcard-codaffectiontutorialdbserver%3bPassword=Cursoapps1</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="Angular_Employees_Final.Models.EmployeeContext">
+      <Value>Data Source=tcp:webapi-creditcard-codaffectiontutorialdbserver.database.windows.net,1433%3bInitial Catalog=Angular_Employees_Final_db%3bUser Id=of3lia%40webapi-creditcard-codaffectiontutorialdbserver%3bPassword=Cursoapps1</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>
