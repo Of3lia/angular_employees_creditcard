@@ -1,0 +1,69 @@
+<h1>Employees List</h1>
+<form #form="ngForm" (submit)="onSubmit(form)">
+<table class="table table-striped table-hover" style="table-layout:fixed;">
+    <thead class="thead-dark">
+        <tr ng>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Job</th>
+            <th>Salary</th>
+            <th><button class="btn btn-primary" (click)="createEmployeeClick()" type="button">Add Employee</button></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Create Employee -->
+        <tr *ngIf="createEmployee == true">
+            <td>Id</td>
+            <td><input class="form-control col-sm ng-touched" type="text" placeholder="Name" 
+                name="empName" #empName="ngModel" [(ngModel)]="service.employeeData.empName" required></td>
+            <td><input  class="form-control ng-touched" type="text" placeholder="Surname" 
+                name="empSurname" #empSurname="ngModel" [(ngModel)]="service.employeeData.empSurname"></td>
+            <td><input class="form-control ng-touched" type="text" placeholder="Job" 
+                name="empJob" #empJob="ngModel" [(ngModel)]="service.employeeData.empJob" required></td>
+            <td><input class="form-control ng-touched" type="number" placeholder="$ 0.00" 
+                name="empSalary" #empSalary="ngModel" [(ngModel)]="service.employeeData.empSalary" required></td>
+            <td><button class="btn btn-outline-primary" type="submit" [disabled]="form.invalid" >Create</button></td>
+            <td><button class="btn btn-outline-danger" (click)="cancelCreateEmployee()" type="button">Cancel</button></td>
+        </tr>
+           <!-- Show All Employee -->
+        <tr class="table-hover" *ngFor="let emp of service.list">
+            <ng-container *ngIf="emp.empId != empToEdit">
+            <td>{{ emp.empId }}</td>
+            <td>{{ emp.empName }}</td>
+            <td *ngIf="emp.empSurname != '' && emp.empSurname != null else nullSurname ">{{ emp.empSurname }}</td>
+            <ng-template #nullSurname> <td>Null Surname</td></ng-template>
+            <td>{{ emp.empJob }}</td>
+            <td>{{ emp.empSalary | currency }}</td>
+            <td><button class="btn btn-warning" (click)="editEmployeeClick(emp)" type="button">Edit</button></td>
+            <td><button class="btn btn-danger" type="button" (click)="deleteEmployee(emp.empId)">Delete</button></td>
+            </ng-container>
+
+           <!-- Edit Employee -->
+            <ng-container *ngIf="emp.empId == empToEdit">
+                <td>Id</td>
+                <td><input class="form-control col-sm" type="text" placeholder="Name" [value]="emp.empName"
+                    name="empName" #empName="ngModel" [(ngModel)]="service.employeeData.empName" required></td>
+
+                <td><input  class="form-control" type="text" placeholder="Surname" [value]="emp.empSurname"
+                    name="empSurname" #empSurname="ngModel" [(ngModel)]="service.employeeData.empSurname"></td>
+                <td><input class="form-control" type="text" placeholder="Job" [value]="emp.empJob"
+                    name="empJob" #empJob="ngModel" [(ngModel)]="service.employeeData.empJob" required></td>
+
+                <td><input class="form-control" placeholder="$ 0.00" [value]="emp.empSalary"
+                    type="number" name="empSalary" #empSalary="ngModel" [(ngModel)]="service.employeeData.empSalary" required></td>
+
+                <td><button class="btn btn-outline-success" type="submit" [disabled]="form.invalid">Save</button></td>
+                <td><button class="btn btn-outline-danger" (click)="cancelEditEmployee()" type="button">Cancel</button></td>
+            </ng-container>
+        </tr>
+    </tbody>
+</table>
+
+<div class="text-center" *ngIf="service.list == null">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+</form>
